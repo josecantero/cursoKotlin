@@ -1,4 +1,4 @@
-package com.example.cursokotlin
+package com.example.cursokotlin.sintaxis
 
 fun main(){
     val weekDays = arrayOf("Lunes","Martes","Miercoles","Jueves","Viernes","Sábado","Domingo")
