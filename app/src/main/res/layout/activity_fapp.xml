@@ -12,9 +12,11 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:text="hola"
+        android:textColor="@color/material_dynamic_neutral0"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
