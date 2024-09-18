@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">cursoKotlin</string>
     <string name="hola">hola</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="height">Altura</string>
 </resources>

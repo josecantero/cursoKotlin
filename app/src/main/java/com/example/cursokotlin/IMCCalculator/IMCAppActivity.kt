@@ -1,0 +1,90 @@
+package com.example.cursokotlin.IMCCalculator
+
+import android.annotation.SuppressLint
+import android.icu.text.DecimalFormat
+import android.os.Bundle
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import com.example.cursokotlin.R
+import com.google.android.material.slider.RangeSlider
+
+class IMCAppActivity : AppCompatActivity() {
+    private lateinit var viewMale:CardView
+    private lateinit var viewFemale:CardView
+    private lateinit var tvHeight:TextView
+    private lateinit var rsHeight:RangeSlider
+
+    private var isMaleSelected:Boolean = true
+    private var isFemaleSelected:Boolean = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_imcapp)
+
+        initComponents()
+        initListeners()
+        initUI()
+
+
+        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }*/
+    }
+
+    private fun initComponents(){
+        viewMale = findViewById(R.id.leftCard)
+        viewFemale = findViewById(R.id.rightCard)
+        tvHeight = findViewById(R.id.tvHeight)
+        rsHeight = findViewById(R.id.rsHeight)
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun initListeners(){
+        viewMale.setOnClickListener{
+            changeGenderState()
+            setCardColor()
+        }
+        viewFemale.setOnClickListener{
+            changeGenderState()
+            setCardColor()
+        }
+
+        rsHeight.addOnChangeListener { _, value, _ ->
+            val df = DecimalFormat("#.##")
+
+            tvHeight.text = "${df.format(value)} cm"
+        }
+    }
+
+    private fun changeGenderState(){
+        isMaleSelected = !isMaleSelected
+        isFemaleSelected = !isFemaleSelected
+
+    }
+
+    private fun setCardColor(){
+        viewMale.setCardBackgroundColor(getBackGroundColor(isMaleSelected))
+        viewFemale.setCardBackgroundColor(getBackGroundColor(isFemaleSelected))
+    }
+
+    private fun getBackGroundColor(isSelectedComponent:Boolean):Int{
+        val colorReference = if(isSelectedComponent){
+            R.color.Background_component_selected
+        }else{
+            R.color.Background_component
+        }
+
+        return colorReference
+    }
+
+    private fun initUI() {
+        setCardColor()
+    }
+
+
+}
