@@ -26,6 +26,9 @@ class IMCAppActivity : AppCompatActivity() {
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
 
+    private var currentWeight:Int = 60
+    private var currentAge:Int = 25
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -72,6 +75,35 @@ class IMCAppActivity : AppCompatActivity() {
 
             tvHeight.text = "${df.format(value)} cm"
         }
+
+        btnSubsWeight.setOnClickListener{
+            currentWeight += 1
+            setWeight()
+        }
+
+        btnAddWeight.setOnClickListener {
+            currentWeight -= 1
+            setWeight()
+        }
+
+        btnSubsAge.setOnClickListener {
+            currentAge -= 1
+            setAge()
+        }
+
+        btnAddAge.setOnClickListener {
+            currentAge += 1
+            setAge()
+        }
+
+    }
+
+    private fun setWeight(){
+        tvWeight.text = currentWeight.toString()
+    }
+
+    private fun setAge(){
+        tvAge.text = currentAge.toString()
     }
 
     private fun changeGenderState(){
@@ -97,6 +129,8 @@ class IMCAppActivity : AppCompatActivity() {
 
     private fun initUI() {
         setCardColor()
+        setWeight()
+        setAge()
     }
 
 
