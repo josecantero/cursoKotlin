@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.cursokotlin.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 
 class IMCAppActivity : AppCompatActivity() {
@@ -15,6 +16,10 @@ class IMCAppActivity : AppCompatActivity() {
     private lateinit var viewFemale:CardView
     private lateinit var tvHeight:TextView
     private lateinit var rsHeight:RangeSlider
+    private lateinit var btnSubsWeight: FloatingActionButton
+    private lateinit var btnAddWeight:FloatingActionButton
+    private lateinit var btnSubsAge:FloatingActionButton
+    private lateinit var btnAddAge:FloatingActionButton
 
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
@@ -41,6 +46,10 @@ class IMCAppActivity : AppCompatActivity() {
         viewFemale = findViewById(R.id.rightCard)
         tvHeight = findViewById(R.id.tvHeight)
         rsHeight = findViewById(R.id.rsHeight)
+        btnSubsWeight = findViewById(R.id.btnSubsWeight)
+        btnAddWeight = findViewById(R.id.btnAddWeight)
+        btnSubsAge = findViewById(R.id.btnSubsAge)
+        btnAddAge = findViewById(R.id.btnAddAge)
     }
 
     @SuppressLint("SetTextI18n")
