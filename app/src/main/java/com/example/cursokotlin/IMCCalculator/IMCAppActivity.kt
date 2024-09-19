@@ -20,6 +20,8 @@ class IMCAppActivity : AppCompatActivity() {
     private lateinit var btnAddWeight:FloatingActionButton
     private lateinit var btnSubsAge:FloatingActionButton
     private lateinit var btnAddAge:FloatingActionButton
+    private lateinit var tvWeight:TextView
+    private lateinit var tvAge:TextView
 
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
@@ -50,6 +52,8 @@ class IMCAppActivity : AppCompatActivity() {
         btnAddWeight = findViewById(R.id.btnAddWeight)
         btnSubsAge = findViewById(R.id.btnSubsAge)
         btnAddAge = findViewById(R.id.btnAddAge)
+        tvWeight = findViewById(R.id.tvWeight)
+        tvAge = findViewById(R.id.tvAge)
     }
 
     @SuppressLint("SetTextI18n")
