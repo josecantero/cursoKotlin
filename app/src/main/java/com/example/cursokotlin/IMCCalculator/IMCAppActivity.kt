@@ -77,12 +77,12 @@ class IMCAppActivity : AppCompatActivity() {
         }
 
         btnSubsWeight.setOnClickListener{
-            currentWeight += 1
+            currentWeight -= 1
             setWeight()
         }
 
         btnAddWeight.setOnClickListener {
-            currentWeight -= 1
+            currentWeight += 1
             setWeight()
         }
 
