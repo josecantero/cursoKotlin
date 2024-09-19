@@ -3,6 +3,7 @@ package com.example.cursokotlin.IMCCalculator
 import android.annotation.SuppressLint
 import android.icu.text.DecimalFormat
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,10 +23,12 @@ class IMCAppActivity : AppCompatActivity() {
     private lateinit var btnAddAge:FloatingActionButton
     private lateinit var tvWeight:TextView
     private lateinit var tvAge:TextView
+    private lateinit var btnCalc:Button
 
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
 
+    private var currentHeight:Int = 120
     private var currentWeight:Int = 60
     private var currentAge:Int = 25
 
@@ -57,6 +60,7 @@ class IMCAppActivity : AppCompatActivity() {
         btnAddAge = findViewById(R.id.btnAddAge)
         tvWeight = findViewById(R.id.tvWeight)
         tvAge = findViewById(R.id.tvAge)
+        btnCalc = findViewById(R.id.btnCalulate)
     }
 
     @SuppressLint("SetTextI18n")
@@ -72,8 +76,8 @@ class IMCAppActivity : AppCompatActivity() {
 
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#.##")
-
-            tvHeight.text = "${df.format(value)} cm"
+            currentHeight = df.format(value).toInt()
+            tvHeight.text = "$currentHeight cm"
         }
 
         btnSubsWeight.setOnClickListener{
@@ -95,6 +99,9 @@ class IMCAppActivity : AppCompatActivity() {
             currentAge += 1
             setAge()
         }
+        btnCalc.setOnClickListener {
+            calculateIMC()
+        }
 
     }
 
@@ -104,6 +111,12 @@ class IMCAppActivity : AppCompatActivity() {
 
     private fun setAge(){
         tvAge.text = currentAge.toString()
+    }
+
+    private fun calculateIMC(){
+        val df = DecimalFormat("#.##")
+        val imc = currentWeight / (currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
+        val result = df.format(imc).toDouble()
     }
 
     private fun changeGenderState(){
