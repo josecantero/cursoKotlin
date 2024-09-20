@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cursokotlin.IMCCalculator.IMCAppActivity.Companion.IMCKEY
@@ -17,7 +18,7 @@ class IMCResultActivity : AppCompatActivity() {
     private lateinit var tvIMCResultNumber:TextView
     private lateinit var tvIMCResultDescription:TextView
     private lateinit var btnRecalcular: Button
-    private lateinit var btnGoMenu:Button
+    private lateinit var btnGoMenu: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +31,11 @@ class IMCResultActivity : AppCompatActivity() {
         initListeners()
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
+        }*/
     }
 
     private fun initComponents(){

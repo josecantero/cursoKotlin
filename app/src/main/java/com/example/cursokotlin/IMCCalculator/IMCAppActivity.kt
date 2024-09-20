@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.cardview.widget.CardView
 import com.example.cursokotlin.MenuActivity
 import com.example.cursokotlin.R
@@ -26,7 +27,7 @@ class IMCAppActivity : AppCompatActivity() {
     private lateinit var tvWeight:TextView
     private lateinit var tvAge:TextView
     private lateinit var btnCalc:Button
-    private lateinit var btnGoMenu:Button
+    private lateinit var btnGoMenu: AppCompatButton
 
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
