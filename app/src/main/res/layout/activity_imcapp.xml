@@ -9,7 +9,32 @@
     android:paddingHorizontal="16dp"
     android:paddingTop="32dp"
     android:background="@color/Background_app">
-    
+
+    <Button
+        android:id="@+id/btnGoMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="< MENU"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvIMCTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/Background_app"/>
+
+    <TextView
+        android:id="@+id/tvIMCTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/imcAppTitle"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/leftCard"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/leftCard"
         android:layout_width="0dp"
@@ -17,7 +42,7 @@
         android:layout_marginEnd="8dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/Background_component_selected"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIMCTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/rightCard">
 
@@ -51,7 +76,7 @@
         android:layout_marginStart="8dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/Background_component"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvIMCTitle"
         app:layout_constraintStart_toEndOf="@id/leftCard"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -245,6 +270,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="@string/calculate"
+        android:backgroundTint="@color/Background_button"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/cvWeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

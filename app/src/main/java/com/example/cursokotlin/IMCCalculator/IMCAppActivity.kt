@@ -1,6 +1,7 @@
 package com.example.cursokotlin.IMCCalculator
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.icu.text.DecimalFormat
 import android.os.Bundle
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.example.cursokotlin.MenuActivity
 import com.example.cursokotlin.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
@@ -24,6 +26,7 @@ class IMCAppActivity : AppCompatActivity() {
     private lateinit var tvWeight:TextView
     private lateinit var tvAge:TextView
     private lateinit var btnCalc:Button
+    private lateinit var btnGoMenu:Button
 
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
@@ -31,6 +34,10 @@ class IMCAppActivity : AppCompatActivity() {
     private var currentHeight:Int = 120
     private var currentWeight:Int = 60
     private var currentAge:Int = 25
+
+    companion object{
+        const val IMCKEY = "IMC_RESULT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +68,7 @@ class IMCAppActivity : AppCompatActivity() {
         tvWeight = findViewById(R.id.tvWeight)
         tvAge = findViewById(R.id.tvAge)
         btnCalc = findViewById(R.id.btnCalulate)
+        btnGoMenu = findViewById(R.id.btnGoMenu)
     }
 
     @SuppressLint("SetTextI18n")
@@ -100,7 +108,13 @@ class IMCAppActivity : AppCompatActivity() {
             setAge()
         }
         btnCalc.setOnClickListener {
-            calculateIMC()
+            val result:Double = calculateIMC()
+            navigateToIMCResult(result)
+        }
+
+        btnGoMenu.setOnClickListener{
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
         }
 
     }
@@ -113,10 +127,17 @@ class IMCAppActivity : AppCompatActivity() {
         tvAge.text = currentAge.toString()
     }
 
-    private fun calculateIMC(){
+    private fun calculateIMC():Double{
         val df = DecimalFormat("#.##")
         val imc = currentWeight / (currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
         val result = df.format(imc).toDouble()
+        return result
+    }
+
+    private fun navigateToIMCResult(result:Double){
+        val intent = Intent(this, IMCResultActivity::class.java)
+        intent.putExtra(IMCKEY, result)
+        startActivity(intent)
     }
 
     private fun changeGenderState(){

@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">cursoKotlin</string>
     <string name="hola">hola</string>
+    <string name="imcAppTitle">CALCULA INDICE DE MASA CORPORAL</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="height">Altura</string>
     <string name="weigth">Peso</string>
     <string name="age">Edad</string>
     <string name="calculate">Calcular</string>
+    <string name="Recalculate">Recalcular</string>
+    <string name="result">Resultado</string>
+    <string name="error">Error</string>
+    <string name="lowWeight">Peso Bajo</string>
+    <string name="lowWeightDescription">Estás por debajo de lo óptimo para tu peso y estatura</string>
+    <string name="normal">Normal</string>
+    <string name="normalDescription">Estás en tu peso óptimo para tu estatura</string>
+    <string name="overWeight">Sobrepeso</string>
+    <string name="overWeightDescription">Estás por encima de lo óptimo para tu peso estatura</string>
+    <string name="obesity">Obesidad</string>
+    <string name="obesityDescription">Estás muy por encima de lo óptimo para tu estatura</string>
 </resources>

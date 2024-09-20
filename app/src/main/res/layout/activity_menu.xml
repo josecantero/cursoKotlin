@@ -6,20 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    tools:context=".MenuActivity">
+    android:padding="13dp"
+    tools:context=".MenuActivity"
+    android:background="@color/Background_app">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Apps"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginVertical="20dp"
+        />
 
     <Button
         android:id="@+id/btnSaludapp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Saluldapp"/>
+        android:layout_height="70dp"
+        android:backgroundTint="@color/Background_button"
+        android:textColor="@color/white"
+        android:text="Saluld-app"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/btnIMCapp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="IMCapp"/>
+        android:layout_height="70dp"
+        android:backgroundTint="@color/Background_button"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="IMC-app"/>
 
 
 </LinearLayout>
