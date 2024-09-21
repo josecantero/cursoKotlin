@@ -19,4 +19,5 @@
     <string name="overWeightDescription">Estás por encima de lo óptimo para tu peso estatura</string>
     <string name="obesity">Obesidad</string>
     <string name="obesityDescription">Estás muy por encima de lo óptimo para tu estatura</string>
+    <string name="categories">Categorías</string>
 </resources>
