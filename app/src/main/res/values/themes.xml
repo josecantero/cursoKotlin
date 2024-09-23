@@ -27,4 +27,13 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="todo_Subtitle">
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginHorizontal">25dp</item>
+        <item name="android:textColor">@android:color/tertiary_text_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
