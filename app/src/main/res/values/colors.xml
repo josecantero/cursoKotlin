@@ -13,4 +13,12 @@
     <color name="Background_app">#0E0B20</color>
     <color name="Background_button">#EB1555</color>
     <color name="Title_text">#FF8D8E98</color>
+
+    <color name="Background_App_todo">#FAFBFD</color>
+    <color name="Text_Title_todo">#2F353B</color>
+    <color name="text_subtitle_todo">#D7D7D7</color>
+    <color name="card_todo">#E3E4E5</color>
+    <color name="todo_personal">#FF7E00</color>
+    <color name="todo_business">#1E5945</color>
+    <color name="todo_other">#333C87</color>
 </resources>
