@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">cursoKotlin</string>
     <string name="hola">hola</string>
+
+    <!-- IMC APP -->
     <string name="imcAppTitle">CALCULA INDICE DE MASA CORPORAL</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -19,7 +21,15 @@
     <string name="overWeightDescription">Estás por encima de lo óptimo para tu peso estatura</string>
     <string name="obesity">Obesidad</string>
     <string name="obesityDescription">Estás muy por encima de lo óptimo para tu estatura</string>
+
+    <!-- TODO-APP -->
     <string name="categories">Categorías</string>
     <string name="tasks">Tareas</string>
     <string name="complete_tasks">Completar tareas</string>
+    <string name="todo_dialog_add_task">Añade la tarea</string>
+    <string name="todo_dialog_category_business">Negocios</string>
+    <string name="todo_dialog_category_Personal">Personal</string>
+    <string name="todo_dialog_category_other">Otro</string>
+    <string name="todo_dialog_btn_CreateTask">Crear Taraea</string>
+
 </resources>
